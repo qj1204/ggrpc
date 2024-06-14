@@ -8,7 +8,7 @@ import (
 
 const debugText = `<html>
 	<body>
-	<title>GeeRPC Services</title>
+	<title>GgRPC Services</title>
 	{{range .}}
 	<hr>
 	Service {{.Name}}
@@ -37,7 +37,7 @@ type debugService struct {
 	Method map[string]*methodType
 }
 
-// Runs at /debug/geerpc
+// Runs at /debug/ggrpc
 func (server debugHTTP) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 	// Build a sorted version of the data.
 	var services []debugService
