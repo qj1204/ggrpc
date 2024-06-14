@@ -37,7 +37,9 @@ func main() {
 	addr := make(chan string)
 	go startServer(addr)
 	client, _ := ggrpc.Dial("tcp", <-addr)
-	defer func() { _ = client.Close() }()
+	defer func() {
+		client.Close()
+	}()
 
 	time.Sleep(time.Second)
 	// send request & receive response
